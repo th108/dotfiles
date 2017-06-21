@@ -14,5 +14,5 @@ set statuscolor black,green
 set keycolor green
 set functioncolor yellow
 
-include /usr/share/nano/*.nanorc
-#include ~/dotfiles/nano/*.nanorc
+#include /usr/share/nano/*.nanorc
+include ~/dotfiles/nanorc/*.nanorc
