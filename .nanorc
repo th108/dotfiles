@@ -1,0 +1,18 @@
+#https://www.nano-editor.org/dist/v2.5/nano.html
+
+unset historylog
+set smooth
+set softwrap
+set constantshow
+set morespace
+set noconvert
+set nonewlines
+set tabsize 4
+
+set titlecolor black,green
+set statuscolor black,green
+set keycolor green
+set functioncolor yellow
+
+include /usr/share/nano/*.nanorc
+#include ~/dotfiles/nano/*.nanorc
