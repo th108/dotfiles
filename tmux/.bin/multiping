@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# https://superuser.com/questions/200382/how-do-i-get-tmux-to-open-up-a-set-of-panes-without-manually-entering-them
+
+tmux new-window   'ping -4 google.sk'
+tmux split-window 'ping 1.1'
+tmux split-window 'ping ::1'
+tmux split-window 'ping php5.sk'
+tmux select-layout even-vertical

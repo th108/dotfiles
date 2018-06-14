@@ -1,0 +1,8 @@
+unset historylog
+set constantshow
+set tabsize 4
+set smooth
+
+set statuscolor black,green
+set keycolor green
+set functioncolor yellow

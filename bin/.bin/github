@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# http://stackoverflow.com/questions/4332478/read-the-current-text-color-in-a-xterm/4332530#4332530
+# http://unix.stackexchange.com/questions/63658/redirecting-the-content-of-a-file-to-the-command-echo
+# https://linuxtidbits.wordpress.com/2008/08/11/output-color-on-bash-scripts/
+
+user=$1
+repo=$2
+jq="jq -r"
+url="$(curl -s https://api.github.com/repos/$1/$2)"
+
+colour1=$(tput bold)$(tput setaf 2)
+colour2=$(tput sgr0)
+
+printf "\n"
+printf "${colour1}Full name:   ${colour2} `echo "$url" | $jq '.full_name'`\n"
+printf "${colour1}Homepage:    ${colour2} `echo "$url" | $jq '.homepage'`\n"
+printf "${colour1}Description: ${colour2} `echo "$url" | $jq '.description'`\n"
+printf "${colour1}Owner Type:  ${colour2} `echo "$url" | $jq '.owner.type'`\n"
+printf "${colour1}Fork:        ${colour2} `echo "$url" | $jq '.fork'`\n"
+printf "${colour1}Stars:       ${colour2} `echo "$url" | $jq '.stargazers_count'`\n"
+printf "${colour1}Created at:  ${colour2} `echo "$url" | $jq '.created_at'`\n"
+printf "${colour1}Updated at:  ${colour2} `echo "$url" | $jq '.updated_at'`\n"
+printf "${colour1}Language:    ${colour2} `echo "$url" | $jq '.language'`\n"
