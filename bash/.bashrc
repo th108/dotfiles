@@ -119,7 +119,8 @@ if ! shopt -oq posix; then
 fi
 
 #export PS1="\n\[\033[38;5;10m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;10m\]>\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
-export PS1="\n\[\033[38;5;8m\][\[$(tput sgr0)\]\[\033[38;5;63m\]\u@\h\[$(tput sgr0)\]\[\033[38;5;8m\]]-[\t]-[\[$(tput sgr0)\]\[\033[38;5;10m\]\w\[$(tput sgr0)\]\[\033[38;5;8m\]]\[$(tput sgr0)\]\[\033[38;5;15m\]\n\\$ \[$(tput sgr0)\]"
+#export PS1="\n\[\033[38;5;8m\][\[$(tput sgr0)\]\[\033[38;5;63m\]\u@\h\[$(tput sgr0)\]\[\033[38;5;8m\]]-[\t]-[\[$(tput sgr0)\]\[\033[38;5;10m\]\w\[$(tput sgr0)\]\[\033[38;5;8m\]]\[$(tput sgr0)\]\[\033[38;5;15m\]\n\\$ \[$(tput sgr0)\]"
+export PS1="\n┌─[\`if [ \$? = 0 ]; then echo \[\e[32m\]✔\[\e[0m\]; else echo \[\e[31m\]✘\[\e[0m\]; fi\`]──[\[$(tput sgr0)\]\[\033[92m\]\u@\h\[$(tput sgr0)\]\[\033[38;5;15m\]]──[\[$(tput sgr0)\]\[\033[93m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]]──[\[$(tput sgr0)\]\[\033[38;5;244m\]\t\[$(tput sgr0)\]\[\033[38;5;15m\]]\[$(tput sgr0)\]\n└──▶ "
 
 #prettier man pages
 export MANWIDTH=110
