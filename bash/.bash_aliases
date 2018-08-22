@@ -2,6 +2,9 @@
 #######   Aliases   #######
 ###########################
 
+# navigation
+alias ..='cd ..'
+alias ...='cd ../..'
 alias cd..='cd ..'
 
 # more ls aliases
@@ -37,3 +40,11 @@ lyrics ()
     w3m http://search.azlyrics.com/search.php?q=$1
 }
 
+2unix()
+{
+  myArray=( "$@" )
+  for arg in "${myArray[@]}"; do
+    filter_name=$(echo "$arg" | sed 's/%20/ /g' | sed 's/ /_/g' | tr '[:upper:]' '[:lower:]')
+    mv -- "$arg" "$filter_name"
+  done
+}
