@@ -107,6 +107,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+if [ -f ~/.bash_profile ]; then
+    . ~/.bash_profile
+fi
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.bin" ] ; then
     PATH="$HOME/.bin:$PATH"
@@ -123,6 +127,15 @@ if ! shopt -oq posix; then
   fi
 fi
 
+#Terminal autocomplete: cycle through suggestions
+#bind TAB:menu-complete
+
+#readline performs filename matching and completion in a case-insensitive fashion
+bind 'set completion-ignore-case on'
+
+#minor errors in the spelling of a directory component in a cd command will be corrected
+shopt -s cdspell
+
 #export PS1="\n\[\033[38;5;10m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;10m\]>\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 #export PS1="\n\[\033[38;5;8m\][\[$(tput sgr0)\]\[\033[38;5;63m\]\u@\h\[$(tput sgr0)\]\[\033[38;5;8m\]]-[\t]-[\[$(tput sgr0)\]\[\033[38;5;10m\]\w\[$(tput sgr0)\]\[\033[38;5;8m\]]\[$(tput sgr0)\]\[\033[38;5;15m\]\n\\$ \[$(tput sgr0)\]"
 export PS1="\n┌─[\`if [ \$? = 0 ]; then echo \[\e[32m\]✔\[\e[0m\]; else echo \[\e[31m\]✘\[\e[0m\]; fi\`]──[\[$(tput sgr0)\]\[\033[92m\]\u@\h\[$(tput sgr0)\]\[\033[38;5;15m\]]──[\[$(tput sgr0)\]\[\033[93m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]]──[\[$(tput sgr0)\]\[\033[38;5;244m\]\t\[$(tput sgr0)\]\[\033[38;5;15m\]]\[$(tput sgr0)\]\n└──▶ "
@@ -136,3 +149,6 @@ export LESS_TERMCAP_se=$'\E[0m' # end the info box
 export LESS_TERMCAP_so=$'\E[01;42;30m' # begin the info box
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;36m'
+
+export LANG=en_US.UTF-8
+
