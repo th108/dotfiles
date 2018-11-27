@@ -80,14 +80,6 @@ fhe() {
   ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -re 's/^\s*[0-9]+\s*//' | writecmd
 }
 
-    fi  
-
-    if [ "x$pid" != "x" ]
-    then
-        echo $pid | xargs kill -${1:-9}
-    fi  
-}
-
 # fkill - kill processes - list only the ones you can kill. Modified the earlier script.
 fkill() {
     local pid 
